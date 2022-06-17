@@ -15,9 +15,7 @@ public class HibernateSessionFactoryUtil {
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
             try {
-                System.out.println("000");
                 Configuration config = new Configuration().configure();
-                System.out.println("1");
                 config.addAnnotatedClass(Author.class);
                 config.addAnnotatedClass(Book.class);
                 StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(config.getProperties());

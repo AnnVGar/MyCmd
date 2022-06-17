@@ -8,19 +8,19 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws SQLException {
 
-//        AuthorService userService = new AuthorService();
-//        Author author = new Author("Бунин","Иван");
-//        userService.saveAuthor(author);
-//        Book book = new Book("Кавказ");
-//        author.addBook(book);
-//        Book book2 = new Book("Цифры");
-//        book2.setAuthor(author);
-//        author.addBook(book2);
-//        userService.updateUser(author);
+
         AuthorService userService = new AuthorService();
 
-        Author author = userService.findAuthorById(3);
-        System.out.println(author);
+//        Author author3 = userService.findAuthorById(3);
+//        System.out.println(author3);
+        Author author = new Author("Бунин","Иван");
+        userService.saveAuthor(author);
+        Book book = new Book("Кавказ");
+        author.addBook(book);
+        Book book2 = new Book("Цифры");
+        book2.setAuthor(author);
+        author.addBook(book2);
+        userService.updateAuthor(author);
 
 
     }
