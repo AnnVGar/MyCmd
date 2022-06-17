@@ -11,11 +11,12 @@ import java.util.List;
 public class AuthorDao {
 
     public Author findById(int id) {
-//        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-//        Author author =  session.get(Author.class, id);
-//        session.close();
-//        return author;
-         return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Author.class, id);
+        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+        Author author =  session.get(Author.class, id);
+        session.close();
+        System.out.println(session);
+        return author;
+
 
     }
 
@@ -53,7 +54,8 @@ public class AuthorDao {
     public List<Author> findAll() {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         List<Author> authors = (List<Author>)  session.createQuery("From Author").list();
-        session.close();
+
         return authors;
+
     }
 }
