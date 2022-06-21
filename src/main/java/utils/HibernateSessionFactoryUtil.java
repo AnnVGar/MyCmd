@@ -15,7 +15,10 @@ public class HibernateSessionFactoryUtil {
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
             try {
+                System.out.println("start");
+//                Configuration config = new Configuration().configure("hibernate.cfg.xml");
                 Configuration config = new Configuration().configure();
+                System.out.println("config");
                 config.addAnnotatedClass(Author.class);
                 config.addAnnotatedClass(Book.class);
                 StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(config.getProperties());
